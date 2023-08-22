@@ -53,6 +53,7 @@ def menu():
     print("4. Display all patients in the system")
     print("5. Change patient's information")
     print("6. Delete patient's information")
+    print("7. Search for patient")
     print("9. Display dictionary")
     print("10. Exit")
     choice = int(input("Enter your choice: "))
@@ -143,6 +144,17 @@ if __name__ == "__main__":
                 del patients[name]
             else:
                 print("Patient not found")
+        elif choice == 7:
+            name = input("Search: ")
+            for i in patients:
+                if i.startswith(name):
+                    print(patients[i].name)
+            choice2 = input("would you like to see a patient's information? (y/n): ")
+            patient_name = input("Enter patient's name: ")
+            if choice2 == "y":
+                print(patients[patient_name].info())
+            else:
+                continue
         elif choice == 9:
             print(patients)
         else:
