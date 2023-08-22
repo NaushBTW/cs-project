@@ -81,7 +81,7 @@ def menu():
     print("6. Delete patient's information")
     print("7. Search for patient")
     print("8. Filter by details")
-    print("9. Display dictionary")
+    print("9. Display dictionary(for testing purposes)")
     print("10. Exit")
     choice = int(input("Enter your choice: "))
     return choice
@@ -217,8 +217,7 @@ def filter(patients, choice):
     else:
         print("Invalid choice")
 
-
-if __name__ == "__main__":
+def main():
     patients = {}
     choice = menu()
     while choice != 10:
@@ -331,3 +330,6 @@ if __name__ == "__main__":
         else:
             print("Invalid choice")
         choice = menu()
+
+if __name__ == "__main__":
+    main()
