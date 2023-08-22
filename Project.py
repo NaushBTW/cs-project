@@ -52,8 +52,9 @@ def menu():
     print("3. Check patient's information")
     print("4. Display all patients in the system")
     print("5. Change patient's information")
-    print("6. Display dictionary")
-    print("7. Exit")
+    print("6. Delete patient's information")
+    print("9. Display dictionary")
+    print("10. Exit")
     choice = int(input("Enter your choice: "))
     return choice
 
@@ -61,7 +62,7 @@ def menu():
 if __name__ == "__main__":
     patients = {}
     choice = menu()
-    while choice != 7:
+    while choice != 10:
         if choice == 1:
             name = input("Enter patient's name: ")
             gender = input("Enter patient's gender: ")
@@ -137,6 +138,12 @@ if __name__ == "__main__":
                 bmi = patients[pat_name].weight/(patients[pat_name].height*patients[pat_name].height)
                 patients[pat_name].bmi = bmi
         elif choice == 6:
+            name = input("Enter patient's name: ")
+            if name in patients:
+                del patients[name]
+            else:
+                print("Patient not found")
+        elif choice == 9:
             print(patients)
         else:
             print("Invalid choice")
