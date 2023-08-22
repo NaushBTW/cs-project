@@ -54,11 +54,142 @@ def menu():
     print("5. Change patient's information")
     print("6. Delete patient's information")
     print("7. Search for patient")
+    print("8. Filter by details")
     print("9. Display dictionary")
     print("10. Exit")
     choice = int(input("Enter your choice: "))
     return choice
 
+def search(patients, choice):
+    if choice == 1:
+        print("Filters: ")
+        print("1. Greater than")
+        print("2. Less than")
+        print("3. Equal to")
+        choice2 = int(input("Enter your choice: "))
+        if choice2 == 1:
+            age = int(input("Enter age: "))
+            for i in patients:
+                if patients[i].age > age:
+                    print(patients[i].name)
+        elif choice2 == 2:
+            age = int(input("Enter age: "))
+            for i in patients:
+                if patients[i].age < age:
+                    print(patients[i].name)
+        elif choice2 == 3:
+            age = int(input("Enter age: "))
+            for i in patients:
+                if patients[i].age == age:
+                    print(patients[i].name)
+    elif choice == 2:
+        print("Filters: ")
+        print("1. Greater than")
+        print("2. Less than")
+        print("3. Equal to")
+        choice2 = int(input("Enter your choice: "))
+        if choice2 == 1:
+            bp = int(input("Enter blood pressure: "))
+            for i in patients:
+                if patients[i].bp > bp:
+                    print(patients[i].name)
+        elif choice2 == 2:
+            bp = int(input("Enter blood pressure: "))
+            for i in patients:
+                if patients[i].bp < bp:
+                    print(patients[i].name)
+        elif choice2 == 3:
+            bp = int(input("Enter blood pressure: "))
+            for i in patients:
+                if patients[i].bp == bp:
+                    print(patients[i].name)
+    elif choice == 3:
+        print("Filters: ")
+        print("1. Greater than")
+        print("2. Less than")
+        print("3. Equal to")
+        choice2 = int(input("Enter your choice: "))
+        if choice2 == 1:
+            hr = int(input("Enter heart rate: "))
+            for i in patients:
+                if patients[i].hr > hr:
+                    print(patients[i].name)
+        elif choice2 == 2:
+            hr = int(input("Enter heart rate: "))
+            for i in patients:
+                if patients[i].hr < hr:
+                    print(patients[i].name)
+        elif choice2 == 3:
+            hr = int(input("Enter heart rate: "))
+            for i in patients:
+                if patients[i].hr == hr:
+                    print(patients[i].name)
+    elif choice == 4:
+        print("Filters: ")
+        print("1. Greater than")
+        print("2. Less than")
+        print("3. Equal to")
+        choice2 = int(input("Enter your choice: "))
+        if choice2 == 1:
+            temp = int(input("Enter temperature: "))
+            for i in patients:
+                if patients[i].temp > temp:
+                    print(patients[i].name)
+        elif choice2 == 2:
+            temp = int(input("Enter temperature: "))
+            for i in patients:
+                if patients[i].temp < temp:
+                    print(patients[i].name)
+        elif choice2 == 3:
+            temp = int(input("Enter temperature: "))
+            for i in patients:
+                if patients[i].temp == temp:
+                    print(patients[i].name)
+    elif choice == 5:
+        print("Filters: ")
+        print("1. Greater than")
+        print("2. Less than")
+        print("3. Equal to")
+        choice2 = int(input("Enter your choice: "))
+        if choice2 == 1:
+            o2 = int(input("Enter oxygen level: "))
+            for i in patients:
+                if patients[i].o2 > o2:
+                    print(patients[i].name)
+        elif choice2 == 2:
+            o2 = int(input("Enter oxygen level: "))
+            for i in patients:
+                if patients[i].o2 < o2:
+                    print(patients[i].name)
+        elif choice2 == 3:
+            o2 = int(input("Enter oxygen level: "))
+            for i in patients:
+                if patients[i].o2 == o2:
+                    print(patients[i].name)
+    elif choice == 6:
+        print("Filters: ")
+        print("1. Greater than")
+        print("2. Less than")
+        print("3. Equal to")
+        choice2 = int(input("Enter your choice: "))
+        if choice2 == 1:
+            bmi = int(input("Enter BMI: "))
+            for i in patients:
+                if patients[i].bmi > bmi:
+                    print(patients[i].name)
+        elif choice2 == 2:
+            bmi = int(input("Enter BMI: "))
+            for i in patients:
+                if patients[i].bmi < bmi:
+                    print(patients[i].name)
+        elif choice2 == 3:
+            bmi = int(input("Enter BMI: "))
+            for i in patients:
+                if patients[i].bmi == bmi:
+                    print(patients[i].name)
+    else:
+        print("Invalid choice")
+                
 
 if __name__ == "__main__":
     patients = {}
@@ -155,6 +286,16 @@ if __name__ == "__main__":
                 print(patients[patient_name].info())
             else:
                 continue
+        elif choice == 8:
+            print("1. Filter by age")
+            print("2. Filter by blood pressure")
+            print("3. Filter by heart rate")
+            print("4. Filter by temperature")
+            print("5. Filter by oxygen level")
+            print("6. Filter by BMI")
+            choice = int(input("Enter your choice: "))
+            
+            search(patients, choice)
         elif choice == 9:
             print(patients)
         else:
