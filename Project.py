@@ -87,7 +87,7 @@ def menu():
     return choice
 
 
-def search(patients, choice):
+def filter(patients, choice):
     if choice == 1:
         print("Filters: ")
         print("1. Greater than")
@@ -325,7 +325,7 @@ if __name__ == "__main__":
 
             choice = int(input("Enter your choice: "))
 
-            search(patients, choice)
+            filter(patients, choice)
         elif choice == 9:
             print(patients)
         else:
