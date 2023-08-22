@@ -217,6 +217,7 @@ def filter(patients, choice):
     else:
         print("Invalid choice")
 
+
 def main():
     patients = {}
     choice = menu()
