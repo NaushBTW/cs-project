@@ -10,13 +10,39 @@ class patient:
         self.height = height
         self.weight = weight
         self.bmi = bmi
-        
+
     def vitals(self):
-        print("Patient's name: " + self.name + "\nPatient's age: " + str(self.age) + "\nPatient's blood pressure: " + str(self.bp) + "\nPatient's heart rate: " + str(self.hr) + "\nPatient's temperature: " + str(self.temp) + "\nPatient's oxygen level: " + str(self.o2) + "\nPatient's BMI: " + str(self.bmi))
-        
+        print(
+            "Patient's name: "
+            + self.name
+            + "\nPatient's age: "
+            + str(self.age)
+            + "\nPatient's blood pressure: "
+            + str(self.bp)
+            + "\nPatient's heart rate: "
+            + str(self.hr)
+            + "\nPatient's temperature: "
+            + str(self.temp)
+            + "\nPatient's oxygen level: "
+            + str(self.o2)
+            + "\nPatient's BMI: "
+            + str(self.bmi)
+        )
+
     def info(self):
-        print("Patient's name: " + self.name + "\nPatient's age: " + str(self.age) + "\nPatient's gender: " + str(self.gender) + "\nPatient's height: " + str(self.height)  + "\nPatient's weight: " + str(self.weight))
-        
+        print(
+            "Patient's name: "
+            + self.name
+            + "\nPatient's age: "
+            + str(self.age)
+            + "\nPatient's gender: "
+            + str(self.gender)
+            + "\nPatient's height: "
+            + str(self.height)
+            + "\nPatient's weight: "
+            + str(self.weight)
+        )
+
     def healthstatus(self):
         if self.age > 65:
             print("Patient is at high risk")
@@ -44,8 +70,8 @@ class patient:
             print("Patient is at medium risk")
         else:
             print("Patient is at low risk")
-            
-    
+
+
 def menu():
     print("1. Add a patient")
     print("2. Check patient's health status")
@@ -59,6 +85,7 @@ def menu():
     print("10. Exit")
     choice = int(input("Enter your choice: "))
     return choice
+
 
 def search(patients, choice):
     if choice == 1:
@@ -189,7 +216,7 @@ def search(patients, choice):
                     print(patients[i].name)
     else:
         print("Invalid choice")
-                
+
 
 if __name__ == "__main__":
     patients = {}
@@ -205,7 +232,7 @@ if __name__ == "__main__":
             o2 = int(input("Enter patient's oxygen level: "))
             height = float(input("Enter patient's height in m: "))
             weight = float(input("Enter patient's weight in kg: "))
-            bmi = weight/(height*height)
+            bmi = weight / (height * height)
             p = patient(age, bp, hr, temp, o2, name, gender, height, weight, bmi)
             patients[name] = p
         elif choice == 2:
@@ -220,9 +247,9 @@ if __name__ == "__main__":
             if name in patients:
                 print(patients[name].info())
             else:
-                print("Patient not found")     
+                print("Patient not found")
         elif choice == 4:
-            print([name for name in patients])     
+            print([name for name in patients])
         elif choice == 5:
             print("1. Change patient's name")
             print("2. Change patient's age")
@@ -232,10 +259,10 @@ if __name__ == "__main__":
             print("6. Change patient's oxygen level")
             print("7. Change patient's height")
             print("8. Change patient's weight")
-            
+
             choice = int(input("Enter your choice: "))
             pat_name = input("Enter patient's name: ")
-            
+
             if name not in patients:
                 print("Patient not found")
                 continue
@@ -262,12 +289,14 @@ if __name__ == "__main__":
             elif choice == 7:
                 height = float(input("Enter patient's height in m: "))
                 patients[pat_name].height = height
-                bmi = patients[pat_name].weight/(height*height)
+                bmi = patients[pat_name].weight / (height * height)
                 patients[pat_name].bmi = bmi
             elif choice == 8:
                 weight = float(input("Enter patient's weight in kg: "))
                 patients[pat_name].weight = weight
-                bmi = patients[pat_name].weight/(patients[pat_name].height*patients[pat_name].height)
+                bmi = patients[pat_name].weight / (
+                    patients[pat_name].height * patients[pat_name].height
+                )
                 patients[pat_name].bmi = bmi
         elif choice == 6:
             name = input("Enter patient's name: ")
@@ -293,8 +322,9 @@ if __name__ == "__main__":
             print("4. Filter by temperature")
             print("5. Filter by oxygen level")
             print("6. Filter by BMI")
+
             choice = int(input("Enter your choice: "))
-            
+
             search(patients, choice)
         elif choice == 9:
             print(patients)
